@@ -4,19 +4,19 @@
   hosts: localhost
   tasks:
     
-    - name: "Ubuntu - Installing Apache"
+    - name: "Installing Apache in Custom AMI"
       apt:
         name: apache2
         state: present
         update_cache: true
             
-    - name: "Ubuntu - Restarting/Enabling Apache"
+    - name: "Restarting/Enabling Apache"
       service:
         name: apache2
         state: restarted
         enabled: true
             
-    - name: "Ubuntu - Creating index.html page"
+    - name: "Creating index.html page"
       copy:
         content: "<h1><center>Apache Webserver Test Page - Dinoct</center></h1>"
         dest: /var/www/html/index.html
